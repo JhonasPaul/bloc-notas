@@ -1,0 +1,32 @@
+sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
+sudo chmod +x /usr/local/bin/oh-my-posh
+mkdir ~/.poshthemes 
+wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip     
+unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
+chmod u+rw ~/.poshthemes/*.omp.*
+rm ~/.poshthemes/themes.zip
+oh-my-posh font install
+entrar a nano con: sudo nano .bashrc y pegar al ultimo: 
+  eval "$(oh-my-posh init bash --config ~/.poshthemes/negligible.omp.json)" --> guardar, salir y probar con exec bash
+           o
+  eval "$(oh-my-posh init bash --config ~/.poshthemes/atomic.omp.json)"
+           o
+eval "$(oh-my-posh init bash --config ~/.poshthemes/rudolfs-dark.omp.json)"
+           o
+eval "$(oh-my-posh init bash --config ~/.poshthemes/montys.omp.json)"
+
+
+ guardar, salir y probar con exec bash
+ LOGO
+entrar a https://github.com/Yash-Handa/logo-ls/releases y descargar: logo-ls_Linux_x86_64.tar.gz
+entrar por terminal a donse de descargo el logo y:
+tar -xzf logo-ls_Linux_x86_64.tar.gz
+cd logo-ls_Linux_x86_64/
+sudo cp logo-ls /usr/local/bin
+cd /usr/local/bin/
+
+
+===============
+COLORES:
+===============
+color de fondo: #262626

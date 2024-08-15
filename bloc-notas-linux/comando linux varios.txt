@@ -1,0 +1,16 @@
+ELIMINAR PROGRAMA: sudo apt-get -f --purge remove steam
+
+ELIMINAR CARPETAS: sudo rmdir (nombre de la carpeta)
+
+ELIMINAR CARPETAS EN OPT: 
+  entrar por terminal a la direccion donde esta la carpeta que queremos elimiar
+    sudo rm -r (nomre de la carpeta)
+    
+SOLO LECTURA: sudo fdisk -l
+   sudo ntfsfix (nombre del disco)
+   
+CREAR USUARIO:
+   create user "NOMBRE DE USUARIO" identified by contraseña";
+   luego poner:
+   grant dba to "NOMBRE DE USUARIO";
+ELIMINAR USURIO: drop "NOMBRE DE USUARIO" cascadegrant;

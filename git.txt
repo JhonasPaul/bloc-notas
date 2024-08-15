@@ -1,0 +1,18 @@
+deshabilitar crlf: git config --global core.autocrlf false
+
+git init
+git add .
+git commit -m "mensaje"
+git branch -M main
+git remote add origin https://github.com/JhonasPaul/klkl.git
+git push -u origin main
+
+
+
+problema:
+fatal: detected dubious ownership in repository at 'D:/Cursos/POO/Ejercicios'
+
+solucion:
+ git config --global --add safe.directory D:/Cursos/POO/Ejercicios
+
+

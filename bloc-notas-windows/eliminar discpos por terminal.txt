@@ -1,0 +1,8 @@
+diskpart
+list disk
+eliminar formato gtp
+seleccinar el disco a eliminar:
+select disk 0
+list partition
+clean
+exit 

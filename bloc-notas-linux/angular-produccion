@@ -1,0 +1,8 @@
+archivo: package.json:  
+"build:href": "ng build --base-href ./", --> contruye y crea el punto en el index para contruccion
+    "delete:docs": "del docs", ->borra carpeta que no vamos a usar
+    "copy:dist": "copyfiles dist/bases/browser/* ./docs -f", -> copia archivos
+
+    "build:github": "npm run delete:docs && npm run build:href && npm run copy:dist" -> ejecuta los comandos enteriores
+
+por ultimo subir a github

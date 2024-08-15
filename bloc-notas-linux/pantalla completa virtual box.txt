@@ -1,0 +1,6 @@
+referencia: https://www.youtube.com/watch?v=zdkl16oAS1k
+1.- sudo apte update
+2.- sudo apt install linux-headers-$(uname -r)
+3.- ir a la barra de herramientas/dispositivos/insetar iamgen de CD de los complementos de inventado
+4.- ./autorun.sh
+fin

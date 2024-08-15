@@ -1,0 +1,91 @@
+GENERAR JAR
+generar el jar: ./mvnw clean package
+
+
+COMANDOS DOCKER
+docker ps: lista contenedores que estan corriendo
+docker ps -a: lista todos los contenedores
+
+
+======================================================
+COMANDOS MAVEN PARA GENERAR JAR(linux):
+======================================================
+error: Permiso denegado: chmod +x mvnw
+generar el jar: ./mvnw clean package
+generar jar ./mvnw clean package (opcional: -DskipTests)
+correr jar por terminal: java -jar ./target/msvc-usuarios-0.0.1-SNAPSHOT.jar
+
+====================================================
+FLAGS:
+======================================================
+-p (8001:8001)-> puerto
+-d ditach, para que se ejecute en background
+--name (nombre conteneder)poner nombre al contenedor y sirve para la comunicacion entre contendores
+--rm (nombre de contenedor a eliminar)eliminar contenedor cuando se detenga
+--network (nombre de red) ->establece a que network pertenecera el contenedor
+  
+
+
+======================================================
+COMANDOS CONTENEDORES::
+======================================================
+docker ps -> listar los contenedores en ejecucion
+docker ps -a -> ver contenedores detenidos: 
+docker rm (nombre del contenedor) -> eliminiar contenedor por nombre 
+docker container prune -> elimina contenedores detenidos: 
+docker stop -> detener contenedor
+docker start -> iniciar contenedor
+sudo docker logs -f clientesC -> ver despliegue del contenedor
+
+
+======================================================
+COMANDOS IMAGENES::
+======================================================
+ver las imagenes: docker images
+eliminar imagenes una por una: docker rmi (id de la imagen)
+elimina todas las imagenes que no tienen contenedores: docker image prune
+
+
+======================================================
+DOKCERIZAR APP SPRING
+======================================================
+1.- ir a docker hub para copiar la imagen
+2.- crear el DockerFile, ver ejemplo en el block de notas: 
+3.- construir la imagen en la ubicacion donde se encuentra el Dockerfile(el punto indica en la raiz) por terminal:
+  docker build -t clientes . -f Dockerfile
+4.-crea y ejecutart el conteneder basado en la imagen creada(ejecuta el entrypoint):
+      puereto externo:puerto interno		
+docker run -d -p 8001:8085 --rm --name servicio-clientes --network spring clientes
+
+
+======================================================
+FLAGS:
+======================================================
+ -p (8001:8001)-> puerto
+  -d ditach, para que se ejecute en background
+ -t tag, nombre de la imagen
+  --name (nombre conteneder)poner nombre al contenedor y sirve para la comunicacion entre contendores
+  --rm (nombre de contenedor a eliminar)eliminar contenedor cuando se detenga
+  --network (nombre de red) ->establece a que network pertenecera el contenedor
+
+
+======================================================
+    NETWORK
+======================================================
+crear network para comunicacion entre contenedores:
+   para ver comandos para crear una red
+     docker --help 
+   crear uan red:
+     docker network create  (nombre de red)
+   ver redes disponibles
+     docker network ls
+correr docker con network
+sudo docker run -p 8002:8002 -d --name msvc-cursos --network spring cursos
+
+======================================================
+DOCKERIZAR MYSQL
+======================================================
+1.- ir a docker hub.com
+2.- descargar la imagen oficial: docker pull mysql:8
+3.- crear contenedor:
+   docker run -d -p 3307:3306 --name mysql8 --network spring -e MYSQL_ROOT_PASSWORD=45549813O -e MYSQL_DATABASE=msvc_usuarios mysql:8

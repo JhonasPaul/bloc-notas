@@ -1,0 +1,8 @@
+1.- parar servicios
+2.- eliminar la carpteta donde se intalo
+3.-ctrl+r, escribir regedt/ HKEY_LOCAL_MACHINE\SOFTWARE eliminar la carpeta oracle
+4.-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services y eliminar todo lo qeu diga oracle
+5.-c/archivos de programa y eliminar la carpeta oracle
+6.-C:\Users\johnk\AppData\Roaming y eliminar todo de oracle
+7.-C:\Windows\ServiceProfiles y eliminar oracle
+8.-C:\ProgramData y eliminar oraclell
